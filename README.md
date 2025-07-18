@@ -1,4 +1,4 @@
-# Hi, I'm [Your Name] 👋
+# Hi, I'm Chinmay 👋
 
 <div align="center">
   

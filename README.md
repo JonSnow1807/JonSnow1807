@@ -72,8 +72,8 @@
       <td width="50%">
         <h3 align="center">⚡ Fused LayerNorm CUDA Operator</h3>
         <div align="center">
-          <a href="https://github.com/YOUR_USERNAME/Fused-LayerNorm-CUDA-Operator">
-            <img src="https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=Fused-LayerNorm-CUDA-Operator&theme=tokyonight&hide_border=true" />
+          <a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator">
+            <img src="https://github-readme-stats.vercel.app/api/pin/?username=JonSnow1807&repo=Fused-LayerNorm-CUDA-Operator&theme=tokyonight&hide_border=true" />
           </a>
           <p>
             <strong>1.46x faster than PyTorch</strong> • Kernel fusion for LLMs<br>
@@ -84,8 +84,8 @@
       <td width="50%">
         <h3 align="center">🎮 3D Point Cloud Viewer</h3>
         <div align="center">
-          <a href="https://github.com/YOUR_USERNAME/3D-Point-Cloud-Viewer">
-            <img src="https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=3D-Point-Cloud-Viewer&theme=tokyonight&hide_border=true" />
+          <a href="https://github.com/JonSnow1807/3D-Point-Cloud-Viewer">
+            <img src="https://github-readme-stats.vercel.app/api/pin/?username=JonSnow1807&repo=3D-Point-Cloud-Viewer&theme=tokyonight&hide_border=true" />
           </a>
           <p>
             <strong>858 FPS with 1M+ points</strong> • Real-time visualization<br>
@@ -98,8 +98,8 @@
       <td width="50%">
         <h3 align="center">🤖 LLM Knowledge Assistant</h3>
         <div align="center">
-          <a href="https://github.com/YOUR_USERNAME/llm-knowledge-assistant">
-            <img src="https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=llm-knowledge-assistant&theme=tokyonight&hide_border=true" />
+          <a href="https://github.com/JonSnow1807/llm-knowledge-assistant">
+            <img src="https://github-readme-stats.vercel.app/api/pin/?username=JonSnow1807&repo=llm-knowledge-assistant&theme=tokyonight&hide_border=true" />
           </a>
           <p>
             <strong>Production RAG system</strong> • Fine-tuned Llama-3.1-8B<br>
@@ -110,8 +110,8 @@
       <td width="50%">
         <h3 align="center">🎬 Mustard Watch Party</h3>
         <div align="center">
-          <a href="https://github.com/YOUR_USERNAME/Mustard-Watch-Party">
-            <img src="https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=Mustard-Watch-Party&theme=tokyonight&hide_border=true" />
+          <a href="https://github.com/JonSnow1807/Mustard-Watch-Party">
+            <img src="https://github-readme-stats.vercel.app/api/pin/?username=JonSnow1807&repo=Mustard-Watch-Party&theme=tokyonight&hide_border=true" />
           </a>
           <p>
             <strong>&lt;500ms sync latency</strong> • Real-time collaboration<br>
@@ -126,12 +126,12 @@
 ## 📈 GitHub Analytics
 
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&langs_count=8&theme=tokyonight&hide_border=true"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=JonSnow1807&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JonSnow1807&layout=compact&langs_count=8&theme=tokyonight&hide_border=true"/>
 </div>
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=tokyonight&hide_border=true" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=JonSnow1807&theme=tokyonight&hide_border=true" />
 </div>
 
 ## 🏆 Technical Achievements
@@ -179,7 +179,7 @@ achievements = {
 ---
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&style=flat-square&color=blue" alt="Profile views"/>
+  <img src="https://komarev.com/ghpvc/?username=JonSnow1807&style=flat-square&color=blue" alt="Profile views"/>
   
   <sub>Building the future of high-performance computing, one kernel at a time 🚀</sub>
 </div>

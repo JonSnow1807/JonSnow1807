@@ -8,6 +8,7 @@
   
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/cshrivastava/)
   [![Email](https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:cshrivastava2000@gmail.com)
+  [![Hugging Face](https://img.shields.io/badge/🤗_Hugging_Face-Models-FFD21E?style=for-the-badge)](https://huggingface.co/chinmays18)
   
 </div>
 
@@ -55,6 +56,7 @@
   ![Transformers](https://img.shields.io/badge/Transformers-FF6F00?style=flat-square&logo=huggingface&logoColor=white)
   ![LangChain](https://img.shields.io/badge/LangChain-121212?style=flat-square)
   ![RAG](https://img.shields.io/badge/RAG-4285F4?style=flat-square)
+  [![Hugging Face](https://img.shields.io/badge/🤗_HF-chinmays18-FFD21E?style=flat-square)](https://huggingface.co/chinmays18)
   
   ### Infrastructure & Scale
   ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
@@ -123,7 +125,6 @@
   </table>
 </div>
 
-
 ## 🏆 Technical Achievements
 
 ```python
@@ -161,15 +162,15 @@ achievements = {
   
   I'm passionate about building high-performance systems that push the boundaries of what's possible with modern hardware. Whether it's optimizing CUDA kernels for 10x speedups or architecting ML systems that scale to millions of users, I thrive on challenging technical problems.
   
-  [![Email Me](https://img.shields.io/badge/Email-Lets_Talk-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:cshrivastava2000@gmail.com)
+  [![Email Me](https://img.shields.io/badge/Email-Let's_Talk-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:cshrivastava2000@gmail.com)
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/cshrivastava/)
+  [![Hugging Face](https://img.shields.io/badge/🤗_Hugging_Face-chinmays18-FFD21E?style=for-the-badge)](https://huggingface.co/chinmays18)
   
 </div>
 
 ---
 
 <div align="center">
-
   
   <sub>Building the future of high-performance computing, one kernel at a time 🚀</sub>
 </div>

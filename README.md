@@ -27,7 +27,7 @@
         <sub><b>1M+ Point Clouds</b></sub>
       </td>
       <td align="center">
-        <img src="https://img.shields.io/badge/Latency-<500ms-orange?style=for-the-badge" alt="Real-time Sync"/>
+        <img src="https://img.shields.io/badge/Latency-%3C500ms-orange?style=for-the-badge" alt="Real-time Sync"/>
         <br>
         <sub><b>WebSocket Sync</b></sub>
       </td>
@@ -171,7 +171,7 @@ achievements = {
   
   I'm passionate about building high-performance systems that push the boundaries of what's possible with modern hardware. Whether it's optimizing CUDA kernels for 10x speedups or architecting ML systems that scale to millions of users, I thrive on challenging technical problems.
   
-  [![Email Me](https://img.shields.io/badge/Email-Let's_Talk-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:cshrivastava2000@gmail.com)
+  [![Email Me](https://img.shields.io/badge/Email-Lets_Talk-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:cshrivastava2000@gmail.com)
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/cshrivastava/)
   
 </div>

@@ -321,12 +321,6 @@ I'm excited about joining teams that are:
   <img src="https://img.shields.io/badge/Performance_Engineering-F59E0B?style=for-the-badge" />
 </p>
 
-### Target Companies:
-
-<p align="center">
-  <b>MAANG</b> • <b>OpenAI</b> • <b>Anthropic</b> • <b>Scale AI</b> • <b>High-Growth Startups</b>
-</p>
-
 ---
 
 ## 📬 Let's Connect

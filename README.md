@@ -169,7 +169,7 @@ achievements = {
 ---
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=JonSnow1807&style=flat-square&color=blue" alt="Profile views"/>
+
   
   <sub>Building the future of high-performance computing, one kernel at a time 🚀</sub>
 </div>

@@ -1,29 +1,33 @@
-<!-- Dynamic header with gradient animation -->
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=venom&height=300&text=CHINMAY%20SHRIVASTAVA&fontSize=70&rotate=-3&fontAlignY=40&fontColor=fff&color=0:8B5CF6,100:EC4899&stroke=1&strokeWidth=2&desc=Software%20Engineer%20×%20AI/ML%20Developer%20×%20Performance%20Architect&descSize=25&descAlignY=65&descAlign=50&animation=twinkling" width="100%" />
-</p>
+<!-- Dynamic gradient header background -->
+<img src="https://capsule-render.vercel.app/api?type=venom&height=200&color=0:8B5CF6,100:EC4899&section=header" width="100%" />
 
-<!-- Contact badges with hover effect -->
+<h1 align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=700&size=45&pause=3000&color=1F2937&center=true&vCenter=false&random=false&width=600&height=70&lines=CHINMAY+SHRIVASTAVA" alt="Chinmay Shrivastava" />
+</h1>
+
+<h3 align="center">
+  Software Engineer × AI/ML Developer × Performance Architect
+</h3>
+
+<!-- Contact badges -->
 <p align="center">
   <a href="https://linkedin.com/in/cshrivastava">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0077B5" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   &nbsp;
   <a href="mailto:cshrivastava2000@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white&labelColor=D14836" alt="Email" />
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
   &nbsp;
   <a href="https://huggingface.co/chinmays18">
-    <img src="https://img.shields.io/badge/Hugging_Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black&labelColor=FFD21E" alt="Hugging Face" />
+    <img src="https://img.shields.io/badge/Hugging_Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="Hugging Face" />
   </a>
 </p>
 
 <!-- Animated typing intro -->
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=400&size=20&duration=3000&pause=1000&color=8B5CF6&center=true&vCenter=false&multiline=true&random=false&width=800&height=60&lines=Building+systems+where+every+millisecond+counts;Scaling+from+proof-of-concept+to+production+excellence" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=400&size=18&duration=3000&pause=1000&color=8B5CF6&center=true&vCenter=false&multiline=true&random=false&width=800&height=60&lines=Building+systems+where+every+millisecond+counts;Scaling+from+proof-of-concept+to+production+excellence" />
 </p>
-
-<br>
 
 <!-- Quick stats bar -->
 <p align="center">
@@ -319,6 +323,12 @@ I'm excited about joining teams that are:
   <img src="https://img.shields.io/badge/AI/ML_Engineering-EC4899?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Technical_Leadership-10B981?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Performance_Engineering-F59E0B?style=for-the-badge" />
+</p>
+
+### Target Companies:
+
+<p align="center">
+  <b>MAANG</b> • <b>OpenAI</b> • <b>Anthropic</b> • <b>Scale AI</b> • <b>High-Growth Startups</b>
 </p>
 
 ---

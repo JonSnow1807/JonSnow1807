@@ -305,7 +305,7 @@ I'm excited about joining teams that are:
   
   **Open to opportunities in:**
   
-  `Software Engineering` • `AI/ML Engineering` • `Technical Leadership` • `Performance 
+  `Software Engineering` • `AI/ML Engineering` • `Technical Leadership` • `Performance`
   
 </div>
 

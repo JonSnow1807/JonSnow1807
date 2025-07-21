@@ -1,52 +1,55 @@
-<!-- Dynamic gradient header background -->
-<img src="https://capsule-render.vercel.app/api?type=venom&height=200&color=0:8B5CF6,100:EC4899&section=header" width="100%" />
-
-<h1 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=700&size=45&pause=3000&color=1F2937&center=true&vCenter=false&random=false&width=600&height=70&lines=CHINMAY+SHRIVASTAVA" alt="Chinmay Shrivastava" />
-</h1>
-
-<h3 align="center">
-  Software Engineer × AI/ML Developer × Performance Architect
-</h3>
-
-<!-- Contact badges -->
-<p align="center">
-  <a href="https://linkedin.com/in/cshrivastava">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  &nbsp;
-  <a href="mailto:cshrivastava2000@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-  &nbsp;
-  <a href="https://huggingface.co/chinmays18">
-    <img src="https://img.shields.io/badge/Hugging_Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="Hugging Face" />
-  </a>
-</p>
-
-<!-- Animated typing intro -->
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=400&size=18&duration=3000&pause=1000&color=8B5CF6&center=true&vCenter=false&multiline=true&random=false&width=800&height=60&lines=Building+systems+where+every+millisecond+counts;Scaling+from+proof-of-concept+to+production+excellence" />
-</p>
-
-<!-- Quick stats bar -->
-<p align="center">
-  <img src="https://img.shields.io/badge/🚀_10K+-Daily_Queries-8B5CF6?style=flat-square&labelColor=1F2937" />
-  &nbsp;
-  <img src="https://img.shields.io/badge/⚡_1.46x-Performance_Gain-EC4899?style=flat-square&labelColor=1F2937" />
-  &nbsp;
-  <img src="https://img.shields.io/badge/💰_$50K-Monthly_Savings-10B981?style=flat-square&labelColor=1F2937" />
-  &nbsp;
-  <img src="https://img.shields.io/badge/🎯_94%25-ML_Accuracy-F59E0B?style=flat-square&labelColor=1F2937" />
-</p>
-
-<br>
+<!-- Clean, professional header inspired by AlgoExpert -->
+<div align="center">
+  <br><br><br>
+  
+  <!-- Name with clean typography -->
+  <h1 style="font-weight: 600; font-size: 48px; margin-bottom: 0;">
+    Chinmay Shrivastava
+  </h1>
+  
+  <!-- Professional tagline -->
+  <p style="font-size: 20px; color: #6B7280; margin-top: 10px;">
+    Software Engineer × AI/ML Developer × Performance Architect
+  </p>
+  
+  <br>
+  
+  <!-- Clean contact buttons -->
+  <p>
+    <a href="https://linkedin.com/in/cshrivastava">
+      <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+    </a>
+    &nbsp;&nbsp;
+    <a href="mailto:cshrivastava2000@gmail.com">
+      <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+    </a>
+    &nbsp;&nbsp;
+    <a href="https://huggingface.co/chinmays18">
+      <img src="https://img.shields.io/badge/Hugging_Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="Hugging Face" />
+    </a>
+  </p>
+  
+  <br>
+  
+  <!-- Impact metrics in a clean row -->
+  <p>
+    <img src="https://img.shields.io/badge/1.46x-CUDA_Speedup-000000?style=flat&labelColor=E5E7EB" />
+    &nbsp;
+    <img src="https://img.shields.io/badge/858_FPS-3D_Rendering-000000?style=flat&labelColor=E5E7EB" />
+    &nbsp;
+    <img src="https://img.shields.io/badge/94%25-ML_Accuracy-000000?style=flat&labelColor=E5E7EB" />
+    &nbsp;
+    <img src="https://img.shields.io/badge/<500ms-Sync_Latency-000000?style=flat&labelColor=E5E7EB" />
+  </p>
+  
+  <br>
+</div>
 
 ---
 
-## About Me
+## About
 
-I'm a software engineer who transforms complex challenges into elegant solutions that scale. From optimizing CUDA kernels that save $50K monthly to building real-time platforms serving thousands of concurrent users, I thrive at the intersection of **technical excellence** and **business impact**.
+I transform complex challenges into elegant solutions that scale. From optimizing CUDA kernels with 1.46x speedups to building real-time platforms handling thousands of concurrent users, I thrive at the intersection of technical excellence and business impact.
 
 My approach is simple: **measure twice, optimize once, ship constantly**. Whether it's achieving 94% accuracy in production ML systems or rendering 1M+ points at 858 FPS, I believe in pushing the boundaries of what's possible while keeping the user experience at the center.
 
@@ -54,20 +57,22 @@ Currently seeking opportunities to tackle meaningful challenges at companies bui
 
 ---
 
-## 🏆 Impact-Driven Projects
+## Featured Projects
+
+<br>
 
 <table>
   <tr>
-    <td width="50%">
+    <td width="50%" valign="top">
       <h3>🤖 Intelligent Knowledge Assistant</h3>
       <p>
-        <code>10K+ queries/day</code> <code>94% accuracy</code> <code>3.2x cost reduction</code>
+        <code>Production RAG</code> <code>94% accuracy</code> <code>Fine-tuned LLM</code>
       </p>
       <p>
-        Built a production RAG system with fine-tuned Llama-3.1-8B that matches GPT-4 quality at a fraction of the cost. Implemented custom attention caching that reduced latency by 73%, enabling real-time responses at scale.
+        Built a production RAG system with fine-tuned Llama-3.1-8B that matches GPT-4 quality at a fraction of the cost. Implemented custom attention caching that reduced latency by 73%, enabling real-time responses.
       </p>
       <details>
-        <summary><b>Technical Deep Dive</b></summary>
+        <summary><b>Technical Details</b></summary>
         <br>
         <ul>
           <li>Architecture: Hierarchical vector indexing with FAISS</li>
@@ -77,22 +82,20 @@ Currently seeking opportunities to tackle meaningful challenges at companies bui
         </ul>
       </details>
       <br>
-      <p align="center">
-        <a href="https://github.com/JonSnow1807/llm-knowledge-assistant">
-          <img src="https://img.shields.io/badge/View_Project-8B5CF6?style=for-the-badge&logo=github&logoColor=white" />
-        </a>
-      </p>
+      <a href="https://github.com/JonSnow1807/llm-knowledge-assistant">
+        <img src="https://img.shields.io/badge/View_Project-000000?style=for-the-badge&logo=github&logoColor=white" />
+      </a>
     </td>
-    <td width="50%">
+    <td width="50%" valign="top">
       <h3>🎬 Real-time Collaboration Platform</h3>
       <p>
-        <code>&lt;500ms sync</code> <code>1000+ concurrent</code> <code>85% bandwidth saved</code>
+        <code>&lt;500ms sync</code> <code>1000+ concurrent</code> <code>WebSocket protocol</code>
       </p>
       <p>
         Created a video watch party platform with perfect synchronization across distributed clients. Engineered a binary WebSocket protocol with delta compression, achieving sub-500ms latency at scale.
       </p>
       <details>
-        <summary><b>Technical Deep Dive</b></summary>
+        <summary><b>Technical Details</b></summary>
         <br>
         <ul>
           <li>Protocol: Custom binary format over WebSocket</li>
@@ -102,24 +105,22 @@ Currently seeking opportunities to tackle meaningful challenges at companies bui
         </ul>
       </details>
       <br>
-      <p align="center">
-        <a href="https://github.com/JonSnow1807/Mustard-Watch-Party">
-          <img src="https://img.shields.io/badge/View_Project-EC4899?style=for-the-badge&logo=github&logoColor=white" />
-        </a>
-      </p>
+      <a href="https://github.com/JonSnow1807/Mustard-Watch-Party">
+        <img src="https://img.shields.io/badge/View_Project-000000?style=for-the-badge&logo=github&logoColor=white" />
+      </a>
     </td>
   </tr>
   <tr>
-    <td width="50%">
+    <td width="50%" valign="top">
       <h3>⚡ GPU Performance Engineering</h3>
       <p>
-        <code>1.46x speedup</code> <code>95.3% efficiency</code> <code>$50K/month saved</code>
+        <code>1.46x speedup</code> <code>95.3% efficiency</code> <code>Kernel fusion</code>
       </p>
       <p>
-        Developed fused CUDA kernels for transformer models, achieving near-theoretical memory bandwidth utilization. This optimization directly translates to $50K monthly savings in cloud compute costs.
+        Developed fused CUDA kernels for transformer models, achieving near-theoretical memory bandwidth utilization. This optimization enables significant compute cost reductions for LLM inference.
       </p>
       <details>
-        <summary><b>Technical Deep Dive</b></summary>
+        <summary><b>Technical Details</b></summary>
         <br>
         <ul>
           <li>Technique: Kernel fusion for LayerNorm + Activation</li>
@@ -129,13 +130,11 @@ Currently seeking opportunities to tackle meaningful challenges at companies bui
         </ul>
       </details>
       <br>
-      <p align="center">
-        <a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator">
-          <img src="https://img.shields.io/badge/View_Project-10B981?style=for-the-badge&logo=github&logoColor=white" />
-        </a>
-      </p>
+      <a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator">
+        <img src="https://img.shields.io/badge/View_Project-000000?style=for-the-badge&logo=github&logoColor=white" />
+      </a>
     </td>
-    <td width="50%">
+    <td width="50%" valign="top">
       <h3>🎮 High-Performance 3D Visualization</h3>
       <p>
         <code>858 FPS</code> <code>1M+ points</code> <code>7.2x faster</code>
@@ -144,7 +143,7 @@ Currently seeking opportunities to tackle meaningful challenges at companies bui
         Built a 3D point cloud viewer that outperforms industry standards by 7.2x. Implemented custom spatial indexing and SIMD optimizations to achieve real-time rendering of massive datasets.
       </p>
       <details>
-        <summary><b>Technical Deep Dive</b></summary>
+        <summary><b>Technical Details</b></summary>
         <br>
         <ul>
           <li>Algorithm: Custom octree with frustum culling</li>
@@ -154,62 +153,51 @@ Currently seeking opportunities to tackle meaningful challenges at companies bui
         </ul>
       </details>
       <br>
-      <p align="center">
-        <a href="https://github.com/JonSnow1807/3D-Point-Cloud-Viewer">
-          <img src="https://img.shields.io/badge/View_Project-F59E0B?style=for-the-badge&logo=github&logoColor=white" />
-        </a>
-      </p>
+      <a href="https://github.com/JonSnow1807/3D-Point-Cloud-Viewer">
+        <img src="https://img.shields.io/badge/View_Project-000000?style=for-the-badge&logo=github&logoColor=white" />
+      </a>
     </td>
   </tr>
 </table>
 
 ---
 
-## 🛠 Technical Expertise
+## Technical Stack
 
 <div align="center">
 
-<table>
-  <tr>
-    <td align="center" width="100">
-      <img src="https://techstack-generator.vercel.app/python-icon.svg" alt="Python" width="65" height="65" />
-      <br>Python
-    </td>
-    <td align="center" width="100">
-      <img src="https://techstack-generator.vercel.app/ts-icon.svg" alt="TypeScript" width="65" height="65" />
-      <br>TypeScript
-    </td>
-    <td align="center" width="100">
-      <img src="https://techstack-generator.vercel.app/cpp-icon.svg" alt="C++" width="65" height="65" />
-      <br>C++
-    </td>
-    <td align="center" width="100">
-      <img src="https://techstack-generator.vercel.app/react-icon.svg" alt="React" width="65" height="65" />
-      <br>React
-    </td>
-    <td align="center" width="100">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" width="65" height="65" />
-      <br>PyTorch
-    </td>
-    <td align="center" width="100">
-      <img src="https://techstack-generator.vercel.app/docker-icon.svg" alt="Docker" width="65" height="65" />
-      <br>Docker
-    </td>
-    <td align="center" width="100">
-      <img src="https://techstack-generator.vercel.app/kubernetes-icon.svg" alt="Kubernetes" width="65" height="65" />
-      <br>Kubernetes
-    </td>
-    <td align="center" width="100">
-      <img src="https://techstack-generator.vercel.app/nginx-icon.svg" alt="Systems" width="65" height="65" />
-      <br>Systems
-    </td>
-  </tr>
-</table>
+### Languages & Core Technologies
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white" />
+</p>
+
+### AI/ML Stack
+<p>
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
+  <img src="https://img.shields.io/badge/Transformers-FFD21E?style=flat-square&logo=huggingface&logoColor=black" />
+  <img src="https://img.shields.io/badge/LangChain-121212?style=flat-square&logoColor=white" />
+  <img src="https://img.shields.io/badge/RAG-4285F4?style=flat-square&logoColor=white" />
+  <img src="https://img.shields.io/badge/FAISS-00A4EF?style=flat-square&logoColor=white" />
+</p>
+
+### Full-Stack & Infrastructure
+<p>
+  <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" />
+  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white" />
+</p>
 
 </div>
 
 <details>
-<summary align="center"><b>📚 View Complete Tech Stack</b></summary>
+<summary align="center"><b>View Complete Stack</b></summary>
 
 <br>
 
@@ -254,34 +242,30 @@ Performance & Systems:
 
 ---
 
-## 💡 Engineering Philosophy
+## Engineering Philosophy
 
 <table>
   <tr>
     <td width="25%" align="center">
-      <img src="https://img.shields.io/badge/🎯-User_First-8B5CF6?style=for-the-badge&labelColor=1F2937" />
-      <br><br>
+      <h3>🎯</h3>
       <b>User First</b>
       <br>
       <sub>Every optimization should improve the user experience</sub>
     </td>
     <td width="25%" align="center">
-      <img src="https://img.shields.io/badge/📊-Data_Driven-EC4899?style=for-the-badge&labelColor=1F2937" />
-      <br><br>
+      <h3>📊</h3>
       <b>Data Driven</b>
       <br>
       <sub>Measure twice, optimize once, validate always</sub>
     </td>
     <td width="25%" align="center">
-      <img src="https://img.shields.io/badge/🚀-Ship_Fast-10B981?style=for-the-badge&labelColor=1F2937" />
-      <br><br>
+      <h3>🚀</h3>
       <b>Ship Fast</b>
       <br>
       <sub>Perfect tomorrow loses to good today</sub>
     </td>
     <td width="25%" align="center">
-      <img src="https://img.shields.io/badge/∞-Think_Scale-F59E0B?style=for-the-badge&labelColor=1F2937" />
-      <br><br>
+      <h3>∞</h3>
       <b>Think Scale</b>
       <br>
       <sub>Build for 10x growth from day one</sub>
@@ -291,23 +275,23 @@ Performance & Systems:
 
 ---
 
-## 📈 What I Bring to Your Team
+## What I Bring to Your Team
 
 <div align="center">
 
 | Capability | Evidence |
 |:-----------|:---------|
-| **🏗️ Full Product Ownership** | Shipped end-to-end solutions from concept to scale |
-| **⚡ Performance Excellence** | 1.46x-7.2x improvements across different domains |
-| **📊 Production Experience** | Systems handling millions of requests daily |
-| **💰 Business Impact** | Quantifiable savings and efficiency gains |
-| **🚀 Rapid Execution** | From idea to MVP in days, not months |
+| **Full Product Ownership** | Shipped end-to-end solutions from concept to production |
+| **Performance Excellence** | 1.46x-7.2x measurable improvements |
+| **Production Experience** | Scalable systems with real-time performance |
+| **Technical Depth** | From CUDA kernels to React components |
+| **Rapid Execution** | Proven ability to deliver working solutions quickly |
 
 </div>
 
 ---
 
-## 🎯 Looking For My Next Adventure
+## Looking For My Next Adventure
 
 I'm excited about joining teams that are:
 
@@ -316,52 +300,55 @@ I'm excited about joining teams that are:
 - **Moving fast with purpose** - Velocity with vision, not just for speed's sake
 - **Creating the future** - Not just following trends, but setting them
 
-### Open to Opportunities In:
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Software_Engineering-8B5CF6?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/AI/ML_Engineering-EC4899?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Technical_Leadership-10B981?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Performance_Engineering-F59E0B?style=for-the-badge" />
-</p>
-
-
-## 📬 Let's Connect
-
 <div align="center">
-
-<br>
-
-I'm always excited to discuss challenging problems and explore how I can contribute to your team's success.
-
-Whether you're building the next breakthrough in AI, scaling systems to billions, or creating products that change lives - let's talk.
-
-<br>
-
-<a href="mailto:cshrivastava2000@gmail.com">
-  <img src="https://img.shields.io/badge/Send_an_Email-8B5CF6?style=for-the-badge&logo=gmail&logoColor=white&labelColor=1F2937" />
-</a>
-&nbsp;
-<a href="https://linkedin.com/in/cshrivastava">
-  <img src="https://img.shields.io/badge/Connect_on_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=1F2937" />
-</a>
-&nbsp;
-<a href="https://huggingface.co/chinmays18">
-  <img src="https://img.shields.io/badge/Hugging_Face_Profile-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black&labelColor=1F2937" />
-</a>
-
-<br><br>
-
-<img src="https://komarev.com/ghpvc/?username=JonSnow1807&label=Profile%20Views&color=8B5CF6&style=flat" />
-
-<br>
+  <br>
+  
+  **Open to opportunities in:**
+  
+  `Software Engineering` • `AI/ML Engineering` • `Technical Leadership` • `Performance Engineering`
+  
+  **Target companies:**
+  
+  MAANG • OpenAI • Anthropic • Scale AI • High-Growth Startups
+  
+</div>
 
 ---
 
-<sub>
-  <b>Status:</b> Actively seeking new opportunities | 
-  <b>Availability:</b> Immediate | 
-  <b>Location:</b> Flexible/Remote
-</sub>
+## Let's Connect
 
+<div align="center">
+  <br>
+  
+  I'm always excited to discuss challenging problems and explore how I can contribute to your team's success.
+  
+  Whether you're building the next breakthrough in AI, scaling systems to billions, or creating products that change lives - let's talk.
+  
+  <br><br>
+  
+  <a href="mailto:cshrivastava2000@gmail.com">
+    <img src="https://img.shields.io/badge/Send_an_Email-000000?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://linkedin.com/in/cshrivastava">
+    <img src="https://img.shields.io/badge/Connect_on_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://huggingface.co/chinmays18">
+    <img src="https://img.shields.io/badge/Hugging_Face_Profile-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" />
+  </a>
+  
+  <br><br>
+  
+  <img src="https://komarev.com/ghpvc/?username=JonSnow1807&label=Profile%20Views&color=374151&style=flat" />
+  
+  <br><br>
+  
+  ---
+  
+  <sub>
+    <b>Status:</b> Actively seeking new opportunities | 
+    <b>Availability:</b> Immediate | 
+    <b>Location:</b> Flexible/Remote
+  </sub>
 </div>

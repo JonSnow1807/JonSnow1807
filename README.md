@@ -305,11 +305,7 @@ I'm excited about joining teams that are:
   
   **Open to opportunities in:**
   
-  `Software Engineering` • `AI/ML Engineering` • `Technical Leadership` • `Performance Engineering`
-  
-  **Target companies:**
-  
-  MAANG • OpenAI • Anthropic • Scale AI • High-Growth Startups
+  `Software Engineering` • `AI/ML Engineering` • `Technical Leadership` • `Performance 
   
 </div>
 

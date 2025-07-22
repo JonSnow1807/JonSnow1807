@@ -8,6 +8,7 @@
 <h3 align="center">
   Software Engineer × AI/ML Developer × Performance Architect
 </h3>
+
 <!-- Contact badges -->
 <p align="center">
   <a href="https://linkedin.com/in/cshrivastava">
@@ -38,15 +39,14 @@
   &nbsp;
   <img src="https://img.shields.io/badge/⏱️_<500ms-Sync_Latency-F59E0B?style=flat-square&labelColor=1F2937" />
 </p>
-  
-  <br>
-</div>
+
+<br>
 
 ---
 
-## About
+## About Me
 
-I transform complex challenges into elegant solutions that scale. From optimizing CUDA kernels that save $50K monthly to building real-time platforms serving thousands of concurrent users, I thrive at the intersection of technical excellence and business impact.
+I'm a software engineer who transforms complex challenges into elegant solutions that scale. From optimizing CUDA kernels for 1.46x speedups to building real-time platforms with sub-500ms latency, I thrive at the intersection of **technical excellence** and **business impact**.
 
 My approach is simple: **measure twice, optimize once, ship constantly**. Whether it's achieving 94% accuracy in production ML systems or rendering 1M+ points at 858 FPS, I believe in pushing the boundaries of what's possible while keeping the user experience at the center.
 
@@ -56,20 +56,18 @@ Currently seeking opportunities to tackle meaningful challenges at companies bui
 
 ## 🏆 Impact-Driven Projects
 
-<br>
-
 <table>
   <tr>
-    <td width="50%" valign="top">
+    <td width="50%">
       <h3>🤖 Intelligent Knowledge Assistant</h3>
       <p>
-        <code>10K+ queries/day</code> <code>94% accuracy</code> <code>3.2x cost reduction</code>
+        <code>94% accuracy</code> <code>120ms latency</code> <code>Production RAG</code>
       </p>
       <p>
-        Built a production RAG system with fine-tuned Llama-3.1-8B that matches GPT-4 quality at a fraction of the cost. Implemented custom attention caching that reduced latency by 73%, enabling real-time responses at scale.
+        Built a production RAG system with fine-tuned Llama-3.1-8B that matches GPT-4 quality at a fraction of the cost. Implemented custom attention caching that reduced latency by 73%, enabling real-time responses.
       </p>
       <details>
-        <summary><b>Technical Details</b></summary>
+        <summary><b>Technical Deep Dive</b></summary>
         <br>
         <ul>
           <li>Architecture: Hierarchical vector indexing with FAISS</li>
@@ -85,16 +83,16 @@ Currently seeking opportunities to tackle meaningful challenges at companies bui
         </a>
       </p>
     </td>
-    <td width="50%" valign="top">
+    <td width="50%">
       <h3>🎬 Real-time Collaboration Platform</h3>
       <p>
-        <code>&lt;500ms sync</code> <code>1000+ concurrent</code> <code>85% bandwidth saved</code>
+        <code>&lt;500ms sync</code> <code>WebSocket protocol</code> <code>85% bandwidth optimized</code>
       </p>
       <p>
-        Created a video watch party platform with perfect synchronization across distributed clients. Engineered a binary WebSocket protocol with delta compression, achieving sub-500ms latency at scale.
+        Created a video watch party platform with perfect synchronization across distributed clients. Engineered a binary WebSocket protocol with delta compression, achieving sub-500ms latency for seamless real-time collaboration.
       </p>
       <details>
-        <summary><b>Technical Details</b></summary>
+        <summary><b>Technical Deep Dive</b></summary>
         <br>
         <ul>
           <li>Protocol: Custom binary format over WebSocket</li>
@@ -112,16 +110,16 @@ Currently seeking opportunities to tackle meaningful challenges at companies bui
     </td>
   </tr>
   <tr>
-    <td width="50%" valign="top">
+    <td width="50%">
       <h3>⚡ GPU Performance Engineering</h3>
       <p>
-        <code>1.46x speedup</code> <code>95.3% efficiency</code> <code>$50K/month saved</code>
+        <code>1.46x speedup</code> <code>95.3% bandwidth utilization</code> <code>Kernel fusion</code>
       </p>
       <p>
-        Developed fused CUDA kernels for transformer models, achieving near-theoretical memory bandwidth utilization. This optimization directly translates to $50K monthly savings in cloud compute costs.
+        Developed fused CUDA kernels for transformer models, achieving near-theoretical memory bandwidth utilization. This optimization enables significantly faster inference for large language models through innovative kernel fusion techniques.
       </p>
       <details>
-        <summary><b>Technical Details</b></summary>
+        <summary><b>Technical Deep Dive</b></summary>
         <br>
         <ul>
           <li>Technique: Kernel fusion for LayerNorm + Activation</li>
@@ -137,7 +135,7 @@ Currently seeking opportunities to tackle meaningful challenges at companies bui
         </a>
       </p>
     </td>
-    <td width="50%" valign="top">
+    <td width="50%">
       <h3>🎮 High-Performance 3D Visualization</h3>
       <p>
         <code>858 FPS</code> <code>1M+ points</code> <code>7.2x faster</code>
@@ -146,7 +144,7 @@ Currently seeking opportunities to tackle meaningful challenges at companies bui
         Built a 3D point cloud viewer that outperforms industry standards by 7.2x. Implemented custom spatial indexing and SIMD optimizations to achieve real-time rendering of massive datasets.
       </p>
       <details>
-        <summary><b>Technical Details</b></summary>
+        <summary><b>Technical Deep Dive</b></summary>
         <br>
         <ul>
           <li>Algorithm: Custom octree with frustum culling</li>
@@ -299,11 +297,11 @@ Performance & Systems:
 
 | Capability | Evidence |
 |:-----------|:---------|
-| **Full Product Ownership** | Shipped end-to-end solutions from concept to scale |
-| **Performance Excellence** | 1.46x-7.2x improvements across different domains |
-| **Production Experience** | Systems handling millions of requests daily |
-| **Business Impact** | Quantifiable savings and efficiency gains |
-| **Rapid Execution** | From idea to MVP in days, not months |
+| **🏗️ Full Product Ownership** | Shipped end-to-end solutions from concept to production |
+| **⚡ Performance Excellence** | 1.46x-7.2x improvements across different domains |
+| **📊 Production Experience** | Deployed scalable systems with real-world usage |
+| **🎯 Technical Precision** | 94% ML accuracy, 95.3% GPU efficiency achieved |
+| **🚀 Rapid Execution** | From idea to MVP in days, not months |
 
 </div>
 
@@ -318,18 +316,14 @@ I'm excited about joining teams that are:
 - **Moving fast with purpose** - Velocity with vision, not just for speed's sake
 - **Creating the future** - Not just following trends, but setting them
 
-<div align="center">
-  <br>
-  
-  **Open to opportunities in:**
-  
-  `Software Engineering` • `AI/ML Engineering` • `Technical Leadership` • `Performance Engineering`
-  
-  **Target companies:**
-  
-  MAANG • OpenAI • Anthropic • Scale AI • High-Growth Startups
-  
-</div>
+### Open to Opportunities In:
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Software_Engineering-8B5CF6?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/AI/ML_Engineering-EC4899?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Technical_Leadership-10B981?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Performance_Engineering-F59E0B?style=for-the-badge" />
+</p>
 
 ### Target Companies:
 
@@ -342,37 +336,39 @@ I'm excited about joining teams that are:
 ## 📬 Let's Connect
 
 <div align="center">
-  <br>
-  
-  I'm always excited to discuss challenging problems and explore how I can contribute to your team's success.
-  
-  Whether you're building the next breakthrough in AI, scaling systems to billions, or creating products that change lives - let's talk.
-  
-  <br><br>
-  
-  <a href="mailto:cshrivastava2000@gmail.com">
-    <img src="https://img.shields.io/badge/Send_an_Email-000000?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://linkedin.com/in/cshrivastava">
-    <img src="https://img.shields.io/badge/Connect_on_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://huggingface.co/chinmays18">
-    <img src="https://img.shields.io/badge/Hugging_Face_Profile-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" />
-  </a>
-  
-  <br><br>
-  
-  <img src="https://komarev.com/ghpvc/?username=JonSnow1807&label=Profile%20Views&color=8B5CF6&style=flat" />
-  
-  <br><br>
-  
-  ---
-  
-  <sub>
-    <b>Status:</b> Actively seeking new opportunities | 
-    <b>Availability:</b> Immediate | 
-    <b>Location:</b> Flexible/Remote
-  </sub>
+
+<br>
+
+I'm always excited to discuss challenging problems and explore how I can contribute to your team's success.
+
+Whether you're building the next breakthrough in AI, scaling systems to billions, or creating products that change lives - let's talk.
+
+<br>
+
+<a href="mailto:cshrivastava2000@gmail.com">
+  <img src="https://img.shields.io/badge/Send_an_Email-8B5CF6?style=for-the-badge&logo=gmail&logoColor=white&labelColor=1F2937" />
+</a>
+&nbsp;
+<a href="https://linkedin.com/in/cshrivastava">
+  <img src="https://img.shields.io/badge/Connect_on_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=1F2937" />
+</a>
+&nbsp;
+<a href="https://huggingface.co/chinmays18">
+  <img src="https://img.shields.io/badge/Hugging_Face_Profile-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black&labelColor=1F2937" />
+</a>
+
+<br><br>
+
+<img src="https://komarev.com/ghpvc/?username=JonSnow1807&label=Profile%20Views&color=8B5CF6&style=flat" />
+
+<br>
+
+---
+
+<sub>
+  <b>Status:</b> Actively seeking new opportunities | 
+  <b>Availability:</b> Immediate | 
+  <b>Location:</b> Flexible/Remote
+</sub>
+
 </div>

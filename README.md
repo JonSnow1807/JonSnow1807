@@ -1,8 +1,6 @@
 <!-- Upload this README and assets/profile/ to JonSnow1807/JonSnow1807 together. -->
 
 <picture>
-  <source media="(max-width: 640px) and (prefers-color-scheme: dark)" srcset="./assets/profile/hero-mobile-dark.svg">
-  <source media="(max-width: 640px) and (prefers-color-scheme: light)" srcset="./assets/profile/hero-mobile-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/hero-dark.svg">
   <img src="./assets/profile/hero-light.svg" width="100%" alt="Chinmay Shrivastava — Software Engineer. Backend, distributed systems and ML infrastructure.">
 </picture>
@@ -29,35 +27,16 @@ Added IPv4 Type of Service and IPv6 Traffic Class matchers, including command-li
 
 ## 02 / Selected builds
 
-<!-- Fixed, equal image widths let cards wrap naturally instead of squeezing table columns. -->
-<!-- Each card opens its repository; the button row beneath a pair links the shipped/measured destination and the source. -->
+<!-- Each project is one row made of two flush images: the body opens the source repository, the action panel opens the shipped or
+     measured destination. The 77 % + 22 % widths match the artwork's 539:154 intrinsic ratio, so both halves render at the same height.
+     Theme variants only — GitHub's theme-pinning script rewrites combined (max-width + prefers-color-scheme) media queries. -->
 <p align="center">
-  <a href="https://github.com/JonSnow1807/Mustard-Watch-Party"><picture><source media="(max-width: 640px) and (prefers-color-scheme: dark)" srcset="./assets/profile/mustard-mobile-dark.svg"><source media="(max-width: 640px) and (prefers-color-scheme: light)" srcset="./assets/profile/mustard-mobile-light.svg"><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/mustard-dark.svg"><img src="./assets/profile/mustard-light.svg" width="400" alt="Mustard Watch Party — distributed video synchronization. Measured 48 ms P95 steady-state player-reported drift across three Chrome clients at approximately 300 ms RTT in a 240-second test. Open repository."></picture></a>
-  <a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator"><picture><source media="(max-width: 640px) and (prefers-color-scheme: dark)" srcset="./assets/profile/cuda-mobile-dark.svg"><source media="(max-width: 640px) and (prefers-color-scheme: light)" srcset="./assets/profile/cuda-mobile-light.svg"><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/cuda-dark.svg"><img src="./assets/profile/cuda-light.svg" width="400" alt="Fused CUDA Operators — LayerNorm and RMSNorm for PyTorch. Dynamic RMSNorm-to-FP8 measured 1.04–1.76× kernel-time speedup over the compiled PyTorch composite across tested A100 FP16 shapes. Open repository."></picture></a>
+  <a href="https://github.com/JonSnow1807/Mustard-Watch-Party"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/mustard-body-dark.svg"><img src="./assets/profile/mustard-body-light.svg" width="77%" alt="Mustard Watch Party — Multi-instance video synchronization. 48 ms; P95 player-reported drift. 3 Chrome clients / ~300 ms RTT. Steady state / 240-second test. Open the source repository."></picture></a><a href="https://mustard.watch"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/mustard-action-dark.svg"><img src="./assets/profile/mustard-action-light.svg" width="22%" alt="Mustard Watch Party — open Live: mustard.watch."></picture></a>
 </p>
-<p align="center">
-  <a href="https://mustard.watch"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/link-mustard-live-dark.svg"><img src="./assets/profile/link-mustard-live-light.svg" width="129" alt="Mustard Watch Party — live site"></picture></a>
-  <a href="https://github.com/JonSnow1807/Mustard-Watch-Party"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/link-mustard-source-dark.svg"><img src="./assets/profile/link-mustard-source-light.svg" width="145" alt="Mustard Watch Party — source on GitHub"></picture></a>
-  &nbsp;&nbsp;
-  <a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator/tree/main/benchmarks/results/2026-08-25_a100-40gb_v050_ops"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/link-cuda-benchmarks-dark.svg"><img src="./assets/profile/link-cuda-benchmarks-light.svg" width="181" alt="Fused CUDA Operators — A100 benchmark results"></picture></a>
-  <a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/link-cuda-source-dark.svg"><img src="./assets/profile/link-cuda-source-light.svg" width="152" alt="Fused CUDA Operators — source on GitHub"></picture></a>
-</p>
-<p align="center">
-  <a href="https://github.com/JonSnow1807/pytorch-autotune"><picture><source media="(max-width: 640px) and (prefers-color-scheme: dark)" srcset="./assets/profile/autotune-mobile-dark.svg"><source media="(max-width: 640px) and (prefers-color-scheme: light)" srcset="./assets/profile/autotune-mobile-light.svg"><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/autotune-dark.svg"><img src="./assets/profile/autotune-light.svg" width="400" alt="PyTorch AutoTune — training configuration search. Measured 2.7–6.7× training-step speedups after tuning versus the PyTorch-default FP32 eager baseline across three workloads on an A100. Open repository."></picture></a>
-  <a href="https://github.com/JonSnow1807/chatgpt-memory-manager"><picture><source media="(max-width: 640px) and (prefers-color-scheme: dark)" srcset="./assets/profile/spark-mobile-dark.svg"><source media="(max-width: 640px) and (prefers-color-scheme: light)" srcset="./assets/profile/spark-mobile-light.svg"><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/spark-dark.svg"><img src="./assets/profile/spark-light.svg" width="400" alt="ChatGPT Spark — published Chrome extension for conversation capture and semantic search, with a React dashboard, FastAPI backend and ChromaDB. Open repository."></picture></a>
-</p>
-<p align="center">
-  <a href="https://pypi.org/project/pytorch-autotune/"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/link-autotune-pypi-dark.svg"><img src="./assets/profile/link-autotune-pypi-light.svg" width="144" alt="PyTorch AutoTune — package on PyPI"></picture></a>
-  <a href="https://github.com/JonSnow1807/pytorch-autotune"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/link-autotune-source-dark.svg"><img src="./assets/profile/link-autotune-source-light.svg" width="152" alt="PyTorch AutoTune — source on GitHub"></picture></a>
-  &nbsp;&nbsp;
-  <a href="https://chromewebstore.google.com/detail/chatgpt-spark/bieoffmnblcajoahiljjbhffeccojpop"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/link-spark-webstore-dark.svg"><img src="./assets/profile/link-spark-webstore-light.svg" width="149" alt="ChatGPT Spark — Chrome Web Store listing"></picture></a>
-  <a href="https://github.com/JonSnow1807/chatgpt-memory-manager"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/link-spark-source-dark.svg"><img src="./assets/profile/link-spark-source-light.svg" width="133" alt="ChatGPT Spark — source on GitHub"></picture></a>
-</p>
-
-### Inside the projects
-
 <details>
-<summary><strong>Mustard</strong> · Clock synchronization, protocol correctness and runtime trade-offs</summary>
+<summary><strong>Inside Mustard</strong> · Clock synchronization, protocol correctness and runtime trade-offs</summary>
+<br>
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/fig-mustard-dark.svg"><img src="./assets/profile/fig-mustard-light.svg" width="700" alt="Mustard: clients estimate a clock offset over the socket ack and correct drift with predictive rate control; room state lives in Redis behind atomic Lua scripts. Chart: steady-state P95 drift 49, 48, 79, 29 and 86 ms across five network scenarios; relay memory 14.5 KB (Rust) versus 40 KB (Go) per connection."></picture></p>
 
 Mustard is a multi-instance watch-party platform: clients connect over WebSockets and use NTP-style clock estimation with predictive drift correction, and updates go through atomic Redis Lua scripts. The **48 ms P95** is a specific claim: **steady-state player-reported drift**, measured across **three Chrome clients** at approximately **300 ms RTT** during a **240-second test**. It is not a physical audio-output measurement.
 
@@ -69,8 +48,13 @@ I also built **Go and Rust relays** to test protocol conformance and runtime cos
 
 </details>
 
+<p align="center">
+  <a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/cuda-body-dark.svg"><img src="./assets/profile/cuda-body-light.svg" width="77%" alt="Fused CUDA Operators — LayerNorm / RMSNorm for PyTorch. 1.04–1.76×; vs. compiled PyTorch. RMSNorm-to-FP8 / A100 / FP16. Kernel-time comparison. Open the source repository."></picture></a><a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator/tree/main/benchmarks/results/2026-08-25_a100-40gb_v050_ops"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/cuda-action-dark.svg"><img src="./assets/profile/cuda-action-light.svg" width="22%" alt="Fused CUDA Operators — open Results: A100 · kernel time."></picture></a>
+</p>
 <details>
-<summary><strong>Fused CUDA operators</strong> · Custom ops, deterministic gradients and FP8</summary>
+<summary><strong>Inside Fused CUDA operators</strong> · Custom ops, deterministic gradients and FP8</summary>
+<br>
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/fig-cuda-dark.svg"><img src="./assets/profile/fig-cuda-light.svg" width="700" alt="Fused CUDA operators: the eager composite runs residual-add, normalization and an FP8 cast as three kernels with HBM round-trips; the fused version does all three in one kernel. Chart: dynamic RMSNorm to FP8 kernel time is 4.9 to 7.2 times faster than the eager composite and 1.04 to 1.76 times faster than the compiled composite across six shapes on an A100 in FP16."></picture></p>
 
 These LayerNorm/RMSNorm kernels combine **fused residual-add**, **FP8 outputs** and **deterministic backward reductions**, and come as drop-in PyTorch modules that work under `torch.compile` without graph breaks. Parameter gradients use fixed-order reductions rather than atomic accumulation, which is where the determinism comes from.
 
@@ -80,8 +64,13 @@ For dynamic RMSNorm-to-FP8, I measured **4.9–7.2× over the eager PyTorch comp
 
 </details>
 
+<p align="center">
+  <a href="https://github.com/JonSnow1807/pytorch-autotune"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/autotune-body-dark.svg"><img src="./assets/profile/autotune-body-light.svg" width="77%" alt="PyTorch AutoTune — Workload-specific training optimization. 2.7–6.7×; training-step speedup after tuning. vs. PyTorch-default FP32 eager. 3 workloads / NVIDIA A100. Open the source repository."></picture></a><a href="https://pypi.org/project/pytorch-autotune/"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/autotune-action-dark.svg"><img src="./assets/profile/autotune-action-light.svg" width="22%" alt="PyTorch AutoTune — open PyPI: pytorch-autotune."></picture></a>
+</p>
 <details>
-<summary><strong>PyTorch AutoTune</strong> · Measure the configuration instead of guessing it</summary>
+<summary><strong>Inside PyTorch AutoTune</strong> · Measure the configuration instead of guessing it</summary>
+<br>
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/fig-autotune-dark.svg"><img src="./assets/profile/fig-autotune-light.svg" width="700" alt="PyTorch AutoTune: the baseline is measured first, candidates across precision, compile mode, memory format and fused optimizer run real training steps under a budget, the winner must beat the incumbent by more than 3 percent, and the report and cache record every trial. Chart: 2.71 times on ResNet-50, 3.84 times on ResNet-18 and 6.65 times on a six-layer Transformer versus the PyTorch-default fp32 eager baseline; the Transformer gain is 2.55 times against an eager baseline with TF32 matmuls enabled."></picture></p>
 
 Rather than guess at a training configuration, the tuner benchmarks **precision, compile mode, memory format and fused-optimizer configurations** on the target model and batch. Search runs under a budget, configurations are cached for reuse, and reports show trial results, compilation cost and estimated break-even time.
 
@@ -91,8 +80,13 @@ I measured **2.7–6.7× training-step speedups after tuning** versus the **PyTo
 
 </details>
 
+<p align="center">
+  <a href="https://github.com/JonSnow1807/chatgpt-memory-manager"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/spark-body-dark.svg"><img src="./assets/profile/spark-body-light.svg" width="77%" alt="ChatGPT Spark — Conversation capture and semantic search. Published; Chrome Web Store. React dashboard / FastAPI backend. ChromaDB vector search. Open the source repository."></picture></a><a href="https://chromewebstore.google.com/detail/chatgpt-spark/bieoffmnblcajoahiljjbhffeccojpop"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/spark-action-dark.svg"><img src="./assets/profile/spark-action-light.svg" width="22%" alt="ChatGPT Spark — open Web Store: Chrome extension."></picture></a>
+</p>
 <details>
-<summary><strong>ChatGPT Spark</strong> · A shipped extension and its retrieval backend</summary>
+<summary><strong>Inside ChatGPT Spark</strong> · A shipped extension and its retrieval backend</summary>
+<br>
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/fig-spark-dark.svg"><img src="./assets/profile/fig-spark-light.svg" width="700" alt="ChatGPT Spark: a Chrome extension captures a conversation, a FastAPI backend stores it, ChromaDB holds the embeddings, and a React dashboard browses and semantically searches them. Published on the Chrome Web Store."></picture></p>
 
 Spark is a Chrome extension I built and published for capturing and searching conversation history. A **React/TypeScript dashboard** lets you browse saved conversations, **FastAPI** handles backend requests, and **ChromaDB** stores the embeddings behind semantic search.
 

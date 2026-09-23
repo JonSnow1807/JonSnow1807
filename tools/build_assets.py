@@ -149,47 +149,6 @@ def motif(kind,t,accent):
         b+=line(573,322,684,322,t['quiet'],2,.8)+line(573,342,654,342,t['quiet'],2,.5)
     return b
 
-def cards(theme,t):
-    w,h=840,540
-    for c in CARDS:
-        a=t[c['accent']]
-        defs=f'<radialGradient id="tint"><stop stop-color="{a}" stop-opacity=".08"/><stop offset="1" stop-color="{a}" stop-opacity="0"/></radialGradient>'
-        b=rect(1,1,w-2,h-2,t['panel'],t['line'],20)
-        b+='<ellipse cx="683" cy="296" rx="190" ry="195" fill="url(#tint)"/>'
-        b+=rect(40,39,37,4,a,r=2)
-        b+=txt(92,49,c['area'],20,t['muted'],mono=True,spacing=2)
-        b+=txt(793,51,c['n'],22,a,mono=True,anchor='end')
-        b+=txt(39,112,c['name'],44,t['text'],700,spacing=-1.2)
-        b+=txt(40,154,c['desc'],27,t['muted'])
-        b+=txt(38,252,c['metric'],c['m_size'],a,700,spacing=-2)
-        for i,s in enumerate(c['scope']):
-            b+=txt(40,297+i*37,s,27 if i==0 else 25,t['text'] if i==0 else t['muted'])
-        b+=motif(c['kind'],t,a)
-        b+=line(40,446,800,446,t['line'])
-        b+=txt(40,491,c['stack'],21,t['muted'],mono=True,spacing=.15)
-        b+=path('M 759 473 H 785 V 499 M 785 473 L 760 498',a,2.8)
-        save(f'{c["slug"]}-{theme}.svg',w,h,c['name']+' — '+c['desc']+'. '+c['metric']+'; '+'. '.join(c['scope'])+'.',b,defs)
-
-
-def mobile_cards(theme,t):
-    for c in CARDS:
-        a=t[c['accent']]
-        b=rect(1,1,598,438,t['panel'],t['line'],18)
-        b+=rect(28,29,28,3,a,r=1.5)
-        b+=txt(67,37,c['area'],17,t['muted'],mono=True,spacing=1.5)
-        b+=txt(567,38,c['n'],18,a,mono=True,anchor='end')
-        b+=txt(27,94,c['name'],38,t['text'],700,spacing=-1)
-        b+=txt(28,129,c['desc'],22,t['muted'])
-        b+=txt(26,217,c['metric'],62,a,700,spacing=-1.8)
-        for i,scope in enumerate(c['scope']):
-            b+=txt(28,261+i*34,scope,25 if i==0 else 23,t['text'] if i==0 else t['muted'])
-        b+=path('M 554 175 H 568 V 340 H 554',t['line'],1.5)
-        b+=circle(568,256,4,a)
-        b+=line(28,375,572,375,t['line'])
-        b+=txt(28,409,c['stack'],16,t['muted'],mono=True)
-        b+=path('M 543 393 H 563 V 413 M 563 393 L 543 413',a,2)
-        save(f"{c['slug']}-mobile-{theme}.svg",600,440,c['name']+' — '+c['desc']+'. '+c['metric']+'; '+'. '.join(c['scope'])+'.',b)
-
 def buttons(theme,t):
     for slug,label,w in [('linkedin','LinkedIn',128),('email','Email',112),('huggingface','Hugging Face',159)]:
         b=rect(1,1,w-2,38,t['panel'],t['line'],8)
@@ -216,23 +175,6 @@ def text_width(s,size,weight=400):
         else: w+=.54
     return w*size*(1.04 if weight>=600 else 1)
 
-def card_links(theme,t):
-    """Two link buttons per project card: the shipped/measured destination and the source repository."""
-    for c in CARDS:
-        a=t[c['accent']]
-        for kind,label in c['links']:
-            x=27
-            name_w=text_width(c['short'],14,600); label_w=text_width(label,14,600)
-            w=int(round(x+name_w+16+label_w+34))
-            b=rect(1,1,w-2,38,t['panel'],t['line'],8)
-            b+=circle(16,20,3.6,a)
-            b+=txt(x,25,c['short'],14,t['muted'],600)
-            b+=txt(x+name_w+5,25,'\u00b7',14,t['quiet'],600)
-            b+=txt(x+name_w+16,25,label,14,t['text'],600)
-            b+=path(f'M {w-23} 15 H {w-17} V 21 M {w-17} 15 L {w-24} 22',a,1.4)
-            dest='source repository on GitHub' if kind=='source' else label
-            save(f'link-{c["slug"]}-{kind}-{theme}.svg',w,40,f'{c["name"]} — {dest}',b)
-
 def endmark(theme,t):
     b=line(0,24,998,24,t['line'])
     b+=path('M 1020 20 L 1034 12 L 1048 20 L 1034 28 Z',t['violet'],1.3)
@@ -240,6 +182,217 @@ def endmark(theme,t):
     b+=line(1075,24,1120,24,t['line'])
     save(f'endmark-{theme}.svg',1120,48,'',b)
 
-for theme,t in THEMES.items():
-    hero(theme,t); cards(theme,t); mobile_cards(theme,t); buttons(theme,t); card_links(theme,t); endmark(theme,t)
+# ---------------------------------------------------------------------------
+# Split project banners. Each project is one full-width row made of two images
+# that sit flush against each other: the body (links to the source repository)
+# and the action panel (links to the shipped or measured destination). Their
+# intrinsic widths are in the same 77:22 ratio as the README's percentage
+# widths, so the two halves always render at the same height.
+# No phone-specific variants: GitHub's theme-pinning script collapses combined
+# media queries, so every image ships one artwork per theme.
+# ---------------------------------------------------------------------------
+BW, PW, BH, R = 539, 154, 250, 14
+DEST = {'mustard': ('Live', 'mustard.watch'), 'cuda': ('Results', 'A100 · kernel time'),
+        'autotune': ('PyPI', 'pytorch-autotune'), 'spark': ('Web Store', 'Chrome extension')}
+MOTIF_CENTER = {'sync': (647, 312), 'chip': (657, 295), 'search': (653, 307), 'conversation': (658, 293)}
+
+def arrow_ne(x, y, c, s=1.0, w=1.6):
+    return path(f'M {x} {y+8*s} L {x+8*s} {y} M {x+2*s} {y} H {x+8*s} V {y+6*s}', c, w)
+
+def banners(theme, t):
+    for c in CARDS:
+        a = t[c['accent']]
+        # Body: the rounded right corners fall outside the viewBox, so the right edge is a clean cut.
+        b = rect(1, 1, BW + R + 10, BH - 2, t['panel'], t['line'], R)
+        b += rect(28, 30, 24, 3, a, r=1.5)
+        b += txt(60, 34, c['area'], 12, t['muted'], mono=True, spacing=1.6)
+        b += txt(28, 78, c['name'], 34, t['text'], 700, spacing=-.8)
+        b += txt(28, 104, c['desc'], 17, t['muted'])
+        ms = round(c['m_size'] * .66)
+        b += txt(27, 172, c['metric'], ms, a, 700, spacing=-1.2)
+        sx = 28 + text_width(c['metric'], ms, 700) * .92 + 26
+        for i, sc in enumerate(c['scope']):
+            b += txt(sx, 146 + i * 21, sc, 15 if i == 0 else 14, t['text'] if i == 0 else t['muted'])
+        b += line(28, 206, BW, 206, t['line'])
+        b += txt(28, 233, c['stack'], 12, t['muted'], mono=True, spacing=.1)
+        b += txt(BW - 46, 233, 'Source', 14, t['text'], 600, anchor='end')
+        b += arrow_ne(BW - 40, 221, a, 1.1)
+        save(f'{c["slug"]}-body-{theme}.svg', BW, BH,
+             f'{c["name"]} — {c["desc"]}. {c["metric"]}; ' + '. '.join(c['scope']) + '. Open the source repository.', b)
+        # Action panel: rounded left corners fall outside; a hairline seam marks the join.
+        label, sub = DEST[c['slug']]
+        b = rect(-R - 10, 1, PW + R + 9, BH - 2, t['panel2'], t['line'], R)
+        b += line(.5, 1, .5, BH - 1, t['line'])
+        b += txt(PW - 14, 34, c['n'], 13, a, mono=True, anchor='end')
+        s = .40; cx, cy = MOTIF_CENTER[c['kind']]
+        b += f'<g transform="translate({77 - cx*s:.1f} {98 - cy*s:.1f}) scale({s})">' + motif(c['kind'], t, a) + '</g>'
+        b += circle(24, 195, 4, a)
+        b += txt(36, 200, label, 16, t['text'], 700)
+        b += arrow_ne(36 + text_width(label, 16, 700) + 9, 190, a, 1.15)
+        b += txt(24, 221, sub, 11, t['muted'], mono=True)
+        save(f'{c["slug"]}-action-{theme}.svg', PW, BH, f'{c["name"]} — open {label}: {sub}.', b)
+
+# ---------------------------------------------------------------------------
+# Explainer figures for the expandable sections: how each system works, and
+# what was measured. Numbers come from the project repositories' committed
+# results; each figure names its scope in a caption.
+# ---------------------------------------------------------------------------
+def node(x, y, w, h, t, title, sub=None, accent=None, size=15, sub_size=12):
+    b = rect(x, y, w, h, t['panel2'], accent or t['line'], 9)
+    b += txt(x + w/2, y + h/2 + (1 if sub else 5), title, size, t['text'], 700, anchor='middle')
+    if sub: b += txt(x + w/2, y + h/2 + 19, sub, sub_size, t['muted'], mono=True, anchor='middle')
+    return b
+
+def arrow(x1, y1, x2, y2, c, w=1.5, head=6):
+    ang = math.atan2(y2 - y1, x2 - x1)
+    h1 = (x2 - head*math.cos(ang - .5), y2 - head*math.sin(ang - .5))
+    h2 = (x2 - head*math.cos(ang + .5), y2 - head*math.sin(ang + .5))
+    return path(f'M {x1} {y1} L {x2} {y2} M {h1[0]:.1f} {h1[1]:.1f} L {x2} {y2} L {h2[0]:.1f} {h2[1]:.1f}', c, w)
+
+def zone(x, y, label, t): return txt(x, y, label, 11, t['quiet'], mono=True, spacing=1.8)
+
+def hbar(x, y, w, c, h=14, opacity=1):
+    r = min(4, w / 2)
+    return f'<path d="M {x} {y} H {x+w-r:.1f} Q {x+w:.1f} {y} {x+w:.1f} {y+r} V {y+h-r} Q {x+w:.1f} {y+h} {x+w-r:.1f} {y+h} H {x} Z" fill="{c}" opacity="{opacity}"/>'
+
+def rangebar(x1, x2, y, c, h=14):
+    r = h / 2
+    return f'<rect x="{x1:.1f}" y="{y}" width="{x2-x1:.1f}" height="{h}" rx="{r}" fill="{c}"/>'
+
+def figure(name, w, h, t, title, body):
+    b = rect(1, 1, w - 2, h - 2, t['panel'], t['line'], 16) + body
+    save(name, w, h, title, b)
+
+def fig_mustard(theme, t):
+    a = t['gold']; W = 700
+    b = zone(28, 34, 'HOW IT WORKS', t)
+    for i, y in enumerate((62, 118, 174)):
+        b += node(28, y, 124, 42, t, 'Chrome ' + 'ABC'[i], size=14)
+        b += arrow(152, y + 21, 296, 138, t['muted'])
+    b += node(298, 104, 150, 68, t, 'Sync server', 'Socket.IO', a)
+    b += node(548, 104, 124, 68, t, 'Redis', 'atomic Lua')
+    b += arrow(448, 138, 546, 138, t['muted'])
+    b += txt(160, 50, 'clock offset θ over the socket ack (NTP-style)', 12, t['muted'])
+    b += txt(160, 240, 'each client: drift = player time − expected time, corrected by', 12, t['muted'])
+    b += txt(160, 256, 'predictive rate control; seeks only for gross error', 12, t['muted'])
+    b += txt(548, 92, 'ordered epochs', 11, t['muted'], mono=True)
+    b += txt(548, 192, 'idempotency keys', 11, t['muted'], mono=True)
+    b += circle(304, 190, 3, a) + txt(313, 194, 'protocol model-checked with TLA+/TLC', 12, t['muted'])
+    b += line(28, 278, W - 28, 278, t['line'])
+    b += zone(28, 306, 'WHAT WAS MEASURED', t)
+    b += txt(28, 330, 'Steady-state P95 drift by network scenario', 13, t['text'], 700)
+    rows = [('clean loopback', 49), ('+150 ms each way (~300 ms RTT)', 48), ('50 ± 30 ms jitter', 79), ('25 ms + 5 % packet loss', 29), ('asymmetric 120 / 20 ms', 86)]
+    x0, scale = 232, 1.55
+    b += line(x0, 342, x0, 452, t['line'])
+    for i, (lab, v) in enumerate(rows):
+        y = 346 + i * 21; hi = (i == 1)
+        b += txt(x0 - 8, y + 11, lab, 12, t['text'] if hi else t['muted'], 600 if hi else 400, anchor='end')
+        b += hbar(x0, y, v * scale, a if hi else t['line'], 14, 1 if hi else .9)
+        b += txt(x0 + v * scale + 6, y + 11, f'{v} ms', 12, t['text'], 600 if hi else 400)
+    b += txt(28, 474, '3 Chrome clients · 240 s · player-reported drift · predictive servo (shipped default) · docs/SYNC_DESIGN.md §8', 11, t['quiet'])
+    b += txt(452, 330, 'Relay memory per connection', 13, t['text'], 700)
+    for i, (lab, v, hi) in enumerate((('Rust', 14.5, True), ('Go', 40, False))):
+        y = 350 + i * 26
+        b += txt(492, y + 11, lab, 12, t['text'] if hi else t['muted'], 600 if hi else 400, anchor='end')
+        b += hbar(500, y, v * 3.4, a if hi else t['line'], 14, 1 if hi else .9)
+        b += txt(500 + v * 3.4 + 6, y + 11, f'{v:g} KB', 12, t['text'], 600 if hi else 400)
+    b += txt(452, 420, 'local 10,000-connection test', 11, t['quiet'])
+    b += txt(452, 436, 'study relays, not the production backend;', 11, t['quiet'])
+    b += txt(452, 452, 'extreme-tail latency comparison inconclusive', 11, t['quiet'])
+    figure(f'fig-mustard-{theme}.svg', W, 496, t, 'Mustard: clients estimate a clock offset over the socket ack and correct drift with predictive rate control; room state lives in Redis behind atomic Lua scripts. Chart: steady-state P95 drift 49, 48, 79, 29 and 86 ms across five network scenarios; relay memory 14.5 KB (Rust) versus 40 KB (Go) per connection.', b)
+
+def fig_cuda(theme, t):
+    a = t['teal']; W = 700
+    b = zone(28, 34, 'HOW IT WORKS', t)
+    b += txt(28, 62, 'EAGER COMPOSITE', 11, t['muted'], mono=True, spacing=1.4)
+    b += node(28, 72, 150, 42, t, 'x + residual', size=14)
+    b += node(262, 72, 176, 42, t, 'LayerNorm / RMSNorm', size=14)
+    b += node(522, 72, 150, 42, t, 'cast → FP8', size=14)
+    for x1, x2 in ((178, 262), (438, 522)):
+        b += arrow(x1, 93, x2, 93, t['muted'])
+        b += txt((x1 + x2) / 2, 87, 'HBM', 10, t['quiet'], mono=True, anchor='middle')
+    b += txt(28, 136, 'three launches; the hidden state round-trips through HBM between them', 12, t['muted'])
+    b += txt(28, 174, 'FUSED', 11, t['muted'], mono=True, spacing=1.4)
+    b += node(28, 184, 410, 56, t, 'residual-add + norm + FP8 quantize', 'one kernel · one read of x and residual', a, 15)
+    b += arrow(438, 204, 522, 204, t['muted']) + arrow(438, 220, 522, 236, t['muted'])
+    b += node(522, 190, 150, 28, t, 'fp8 out + scale', size=13)
+    b += node(522, 224, 150, 28, t, 'new residual', size=13)
+    b += circle(34, 270, 3, a) + txt(43, 274, 'backward: fixed-chunk partials → fixed-order finalize, no atomics', 12, t['muted'])
+    b += circle(34, 292, 3, a) + txt(43, 296, 'torch.compile traces each op as one custom-op node: zero graph breaks', 12, t['muted'])
+    b += line(28, 318, W - 28, 318, t['line'])
+    b += zone(28, 346, 'WHAT WAS MEASURED', t)
+    b += txt(28, 370, 'Dynamic RMSNorm → FP8: kernel-time speedup, min–max across six shapes', 13, t['text'], 700)
+    x0, sc = 236, 52
+    b += line(x0, 384, x0, 456, t['line'])
+    one = x0 + 1 * sc
+    b += line(one, 384, one, 456, t['quiet'], 1) + txt(one, 470, '1× parity', 10, t['quiet'], mono=True, anchor='middle')
+    for i, (lab, lo, hi, em) in enumerate((('vs eager PyTorch composite', 4.9, 7.2, False), ('vs torch.compile’d composite', 1.04, 1.76, True))):
+        y = 392 + i * 30
+        b += txt(x0 - 8, y + 11, lab, 12, t['text'] if em else t['muted'], 600 if em else 400, anchor='end')
+        b += rangebar(x0 + lo * sc, x0 + hi * sc, y, a if em else t['line'])
+        b += txt(x0 + lo * sc - 6, y + 11, f'{lo:g}×', 12, t['text'], 600 if em else 400, anchor='end')
+        b += txt(x0 + hi * sc + 6, y + 11, f'{hi:g}×', 12, t['text'], 600 if em else 400)
+    b += txt(28, 488, 'NVIDIA A100 · FP16 · six shapes, 512×1024 … 4096×8192 · kernel time, not end-to-end model speed', 11, t['quiet'])
+    b += txt(28, 504, 'H100 results and the configurations where PyTorch wins are documented in the repository', 11, t['quiet'])
+    figure(f'fig-cuda-{theme}.svg', W, 524, t, 'Fused CUDA operators: the eager composite runs residual-add, normalization and an FP8 cast as three kernels with HBM round-trips; the fused version does all three in one kernel. Chart: dynamic RMSNorm to FP8 kernel time is 4.9 to 7.2 times faster than the eager composite and 1.04 to 1.76 times faster than the compiled composite across six shapes on an A100 in FP16.', b)
+
+def fig_autotune(theme, t):
+    a = t['violet']; W = 700
+    b = zone(28, 34, 'HOW IT WORKS', t)
+    b += node(28, 62, 130, 56, t, 'Your model', 'and batch', size=14)
+    b += node(196, 62, 150, 56, t, 'Baseline first', 'fp32 eager', size=14)
+    b += node(384, 62, 150, 56, t, 'Candidate grid', 'precision × compile', size=14)
+    b += node(572, 62, 100, 56, t, 'Measure', 'real steps', size=14)
+    for x1, x2 in ((158, 196), (346, 384), (534, 572)): b += arrow(x1, 90, x2, 90, t['muted'])
+    b += txt(459, 136, '× memory format × fused optimizer', 11, t['muted'], mono=True, anchor='middle')
+    b += path('M 622 118 V 150 H 126 V 166', t['muted'], 1.5) + arrow(126, 160, 126, 168, t['muted'])
+    b += node(28, 170, 196, 56, t, 'Keep the winner', '> 3 % over the incumbent', a, 14, 10.5)
+    b += node(254, 170, 200, 56, t, 'Report', 'trials · compile · break-even', size=14, sub_size=10.5)
+    b += node(484, 170, 188, 56, t, 'Cache', 'model · shapes · GPU · torch', size=14, sub_size=10.5)
+    b += arrow(224, 198, 254, 198, t['muted']) + arrow(454, 198, 484, 198, t['muted'])
+    b += circle(34, 254, 3, a) + txt(43, 258, 'the search is budgeted; a candidate slower than the baseline is never returned', 12, t['muted'])
+    b += line(28, 280, W - 28, 280, t['line'])
+    b += zone(28, 308, 'WHAT WAS MEASURED', t)
+    b += txt(28, 332, 'Training-step speedup after tuning', 13, t['text'], 700)
+    x0, sc = 168, 62
+    b += line(x0, 346, x0, 452, t['line'])
+    one = x0 + sc
+    b += line(one, 346, one, 452, t['quiet'], 1)
+    rows = (('ResNet-50', 2.71, None), ('ResNet-18', 3.84, None), ('Transformer 6L', 6.65, 2.55))
+    y = 350
+    for lab, v, alt in rows:
+        b += txt(x0 - 8, y + 11, lab, 12, t['text'], anchor='end')
+        b += hbar(x0, y, v * sc, a, 14)
+        b += txt(x0 + v * sc + 6, y + 11, f'{v:g}×', 12, t['text'], 600)
+        y += 21
+        if alt is not None:
+            b += hbar(x0, y, alt * sc, t['line'], 14, .9)
+            b += txt(x0 + alt * sc + 6, y + 11, f'{alt:g}× vs eager with TF32 matmuls enabled', 12, t['muted'])
+            y += 21
+        y += 6
+    b += rect(28, 462, 12, 12, a, r=3) + txt(46, 472, 'vs PyTorch-default fp32 eager baseline', 12, t['muted'])
+    b += rect(300, 462, 12, 12, t['line'], r=3, opacity=.9) + txt(318, 472, 'vs an informed eager baseline (TF32 matmuls on)', 12, t['muted'])
+    b += txt(28, 494, 'NVIDIA A100-SXM4-40GB · full training step: forward + loss + backward + optimizer', 11, t['quiet'])
+    b += txt(28, 510, 'winning configs use torch.compile together with precision, memory-format and fused-optimizer choices', 11, t['quiet'])
+    figure(f'fig-autotune-{theme}.svg', W, 530, t, 'PyTorch AutoTune: the baseline is measured first, candidates across precision, compile mode, memory format and fused optimizer run real training steps under a budget, the winner must beat the incumbent by more than 3 percent, and the report and cache record every trial. Chart: 2.71 times on ResNet-50, 3.84 times on ResNet-18 and 6.65 times on a six-layer Transformer versus the PyTorch-default fp32 eager baseline; the Transformer gain is 2.55 times against an eager baseline with TF32 matmuls enabled.', b)
+
+def fig_spark(theme, t):
+    a = t['coral']; W = 700
+    b = zone(28, 34, 'HOW IT WORKS', t)
+    steps = (('Chrome extension', 'captures a chat'), ('FastAPI backend', 'stores + serves'), ('ChromaDB', 'embeddings'), ('React dashboard', 'browse · search'))
+    for i, (ti, su) in enumerate(steps):
+        x = 28 + i * 168
+        b += node(x, 64, 128, 58, t, ti, su, a if i == 3 else None, 14)
+        if i: b += arrow(x - 40, 93, x, 93, t['muted'])
+    b += circle(34, 160, 3, a) + txt(43, 164, 'semantic search runs over stored embeddings; the dashboard is React + TypeScript', 12, t['muted'])
+    b += circle(34, 182, 3, a) + txt(43, 186, 'published on the Chrome Web Store', 12, t['muted'])
+    figure(f'fig-spark-{theme}.svg', W, 212, t, 'ChatGPT Spark: a Chrome extension captures a conversation, a FastAPI backend stores it, ChromaDB holds the embeddings, and a React dashboard browses and semantically searches them. Published on the Chrome Web Store.', b)
+
+def figures(theme, t):
+    fig_mustard(theme, t); fig_cuda(theme, t); fig_autotune(theme, t); fig_spark(theme, t)
+
+for old in OUT.glob('*.svg'): old.unlink()
+for theme, t in THEMES.items():
+    hero(theme, t); buttons(theme, t); banners(theme, t); figures(theme, t); endmark(theme, t)
+for stale in OUT.glob('*-mobile-*.svg'): stale.unlink()
 print(f'Built {len(list(OUT.glob("*.svg")))} SVG assets in {OUT}')

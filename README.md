@@ -13,17 +13,25 @@
 
 **I build high-performance backend and ML infrastructure, and I validate it against references instead of trusting it.**
 
-At **Reliance Jio**, I work on production 4G/5G analytics, deterministic query compilation and GPU-backed inference on Kubernetes/OpenShift, including a **13-node, air-gapped, IPv6-only deployment**. Outside work, I contribute to PyTorch and bpfilter, and build tools for GPU performance and distributed coordination.
+At **Reliance Jio**, I work on production 4G/5G analytics, deterministic query compilation and GPU-backed inference on Kubernetes/OpenShift, including a **13-node, air-gapped, IPv6-only deployment**. Outside work, I contribute to PyTorch, DuckDB, RocksDB, Apache Arrow, llama.cpp and bpfilter, and build tools for GPU performance and distributed coordination.
 
 ## 01 / Upstream contributions
 
-**PyTorch core** — two accepted changes  
-Enabled existing dynamic-shape support for foreach operations by default under `torch.compile`, with a test update ([#158985](https://github.com/pytorch/pytorch/pull/158985)). Exposed `rearrange` through the `torch.func` public API, with tests and documentation ([#173183](https://github.com/pytorch/pytorch/pull/173183)).
+**PyTorch core** — two accepted changes, seven in review  
+Enabled existing dynamic-shape support for foreach operations by default under `torch.compile`, with a test update ([#158985](https://github.com/pytorch/pytorch/pull/158985)). Exposed `rearrange` through the `torch.func` public API, with tests and documentation ([#173183](https://github.com/pytorch/pytorch/pull/173183)). In review, each with a failing-first test: an `int` narrowing that made deterministic `index_put_` about 800× slower past 2³¹ elements, measured on an H100 ([#201605](https://github.com/pytorch/pytorch/pull/201605)), bit-wise reproducible sparse-dense matmul under deterministic mode via cuSPARSE's deterministic algorithms ([#202968](https://github.com/pytorch/pytorch/pull/202968)), a cuDNN CTC loss that returned wrong values for strided inputs and an uninitialized gradient ([#203097](https://github.com/pytorch/pytorch/pull/203097)), an out-of-bounds read in the deterministic `index_put_` kernels ([#201635](https://github.com/pytorch/pytorch/pull/201635)), leaked CUDA-graph pool references ([#201639](https://github.com/pytorch/pytorch/pull/201639)), a dtype check in AOTInductor's constant updates ([#202704](https://github.com/pytorch/pytorch/pull/202704)) and a deprecated-API removal ([#201636](https://github.com/pytorch/pytorch/pull/201636)).
 
-**Meta’s bpfilter** — two merged pull requests  
-Added IPv4 Type of Service and IPv6 Traffic Class matchers, including command-line parsing, BPF code generation and unit tests ([#364](https://github.com/facebook/bpfilter/pull/364), [#369](https://github.com/facebook/bpfilter/pull/369)). The IPv6 implementation uses endianness-safe byte loads.
+**DuckDB** — one merged pull request, fifteen in review  
+`SELECT DISTINCT` over an unnested struct covered only the columns as written, not the expanded fields, so rows collapsed wrongly; the binder now regenerates the targets after binding ([#27973](https://github.com/duckdb/duckdb/pull/27973)). Fifteen further binder, planner, aggregate and storage fixes are [open](https://github.com/duckdb/duckdb/pulls?q=is%3Apr+author%3AJonSnow1807+is%3Aopen), each with the failing SQL as its test.
 
-<sub>PyTorch landing commits: <a href="https://github.com/pytorch/pytorch/commit/51eb41a57ef4365bece0c187f1d751221b88c135">foreach</a> · <a href="https://github.com/pytorch/pytorch/commit/cd59c879a7eb47de27e0eead455b0b0349c12488">rearrange</a>.</sub>
+**Meta’s bpfilter** — three merged pull requests  
+Added IPv4 Type of Service and IPv6 Traffic Class matchers, including command-line parsing, BPF code generation and unit tests ([#364](https://github.com/facebook/bpfilter/pull/364), [#369](https://github.com/facebook/bpfilter/pull/369)); the IPv6 implementation uses endianness-safe byte loads. Fixed `meta.probability` above 50 %, where a sign-extended 32-bit immediate in a 64-bit BPF compare made every such rule match 100 % of packets ([#597](https://github.com/facebook/bpfilter/pull/597)).
+
+**Apache Arrow nanoarrow and OpenTelemetry C++** — one merged pull request each  
+Made nanoarrow's testing JSON comparison recurse into nested and dictionary child fields' metadata ([#993](https://github.com/apache/arrow-nanoarrow/pull/993)). Removed a misaligned `sockaddr_in` access in OpenTelemetry C++'s `SocketAddr`, with a regression test that fails on the original header even without sanitizers ([#4725](https://github.com/open-telemetry/opentelemetry-cpp/pull/4725)).
+
+**Also in review** — RocksDB (a use-after-free in `DBIter` when a merge operator returns a blob base value by reference, a dropped merge base value in `Get()`, a shared-lock miscount in `PointLockManager`, and recovery of prepared transactions that wrote to a dropped column family: [#15367](https://github.com/meta/rocksdb/pull/15367), [#15446](https://github.com/meta/rocksdb/pull/15446), [#15522](https://github.com/meta/rocksdb/pull/15522), [#15554](https://github.com/meta/rocksdb/pull/15554)), Apache Arrow C++ ([#54913](https://github.com/apache/arrow/pull/54913), [#54914](https://github.com/apache/arrow/pull/54914), [#54938](https://github.com/apache/arrow/pull/54938)), llama.cpp ([#31345](https://github.com/ggml-org/llama.cpp/pull/31345), an fp32 result for quantized operands in the cuBLAS fallback), vLLM ([#52841](https://github.com/vllm-project/vllm/pull/52841), [#53149](https://github.com/vllm-project/vllm/pull/53149), [#60770](https://github.com/vllm-project/vllm/pull/60770)), SGLang ([#43616](https://github.com/sgl-project/sglang/pull/43616), [#43753](https://github.com/sgl-project/sglang/pull/43753)), Envoy ([#48170](https://github.com/envoyproxy/envoy/pull/48170)) and stripe/ai ([#540](https://github.com/stripe/ai/pull/540), [#541](https://github.com/stripe/ai/pull/541), [#542](https://github.com/stripe/ai/pull/542)).
+
+<sub>Landing commits: PyTorch <a href="https://github.com/pytorch/pytorch/commit/51eb41a57ef4365bece0c187f1d751221b88c135">foreach</a> · <a href="https://github.com/pytorch/pytorch/commit/cd59c879a7eb47de27e0eead455b0b0349c12488">rearrange</a> · DuckDB <a href="https://github.com/duckdb/duckdb/commit/9adc99d292377c206a4bc8940ce45034abd4076c">DISTINCT</a> · bpfilter <a href="https://github.com/facebook/bpfilter/commit/bcae69370eecd1cd939f9ab8d316d3ed363cf9d0">probability</a> · nanoarrow <a href="https://github.com/apache/arrow-nanoarrow/commit/08d23f647c4a81b20bf3af902c93d23401a76b24">metadata</a> · OpenTelemetry <a href="https://github.com/open-telemetry/opentelemetry-cpp/commit/23786b7889960041a5cd77ca0bfd501eff01eb99">sockaddr</a>.</sub>
 
 ## 02 / Selected builds
 
@@ -58,7 +66,7 @@ I also built **Go and Rust relays** to test protocol conformance and runtime cos
 
 These LayerNorm/RMSNorm kernels combine **fused residual-add**, **FP8 outputs** and **deterministic backward reductions**, and come as drop-in PyTorch modules that work under `torch.compile` without graph breaks. Parameter gradients use fixed-order reductions rather than atomic accumulation, which is where the determinism comes from.
 
-For dynamic RMSNorm-to-FP8, I measured **4.9–7.2× over the eager PyTorch composite** and **1.04–1.76× over the compiled composite**, across tested **FP16 shapes on an NVIDIA A100**. Those are **kernel-time comparisons**, not end-to-end model speedups. For a fuller picture, the repository also documents H100 results and configurations where PyTorch wins.
+For dynamic RMSNorm-to-FP8, I measured **4.9–7.2× over the eager PyTorch composite** and **1.04–1.76× over the compiled composite**, across tested **FP16 shapes on an NVIDIA A100**. Those are **kernel-time comparisons**, not end-to-end model speedups. For a fuller picture, the repository also documents H100 results and configurations where PyTorch wins. v0.6.0 (October 2026) adds a register-resident few-row RMSNorm kernel and a warp-per-row dynamic-FP8 path for Hopper; in an A/B against v0.5.0 on an H100 NVL, the few-row kernel is faster at every measured shape of width ≥ 4096 in all three dtypes, with per-op medians of 0.62–0.85× the v0.5.0 kernel time ([results](https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator/tree/main/benchmarks/results/2026-10-29_h100-nvl_v060_fastpaths)).
 
 [Source](https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator) · [A100 results](https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator/tree/main/benchmarks/results/2026-08-25_a100-40gb_v050_ops) · [Methodology](https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator/blob/main/docs/methodology.md)
 
@@ -103,8 +111,8 @@ Also built: **[3D Point Cloud Viewer](https://github.com/JonSnow1807/3D-Point-Cl
 | **Languages** | C++, C, Python, Rust, Go, CUDA, TypeScript, SQL |
 | **Backend & data** | FastAPI, NestJS, WebSockets, SSE, ClickHouse, PostgreSQL/PostGIS, Redis, ChromaDB |
 | **Infrastructure** | Linux, Docker, Kubernetes/OpenShift, AWS, CI/CD |
-| **ML & performance** | PyTorch, `torch.compile`, vLLM, GPU profiling, kernel fusion, benchmark design |
-| **Correctness** | TLA+/TLC, reference-based tests, regression tests, protocol-conformance checks |
+| **ML & performance** | PyTorch internals, `torch.compile`, vLLM, cuSPARSE/cuDNN, GPU profiling, kernel fusion, benchmark design |
+| **Correctness** | TLA+/TLC, reference-based tests, failing-first regression tests, deterministic-mode checks, protocol-conformance checks |
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/endmark-dark.svg">

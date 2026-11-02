@@ -17,6 +17,8 @@ At **Reliance Jio**, I work on production 4G/5G analytics, deterministic query c
 
 ## 01 / Upstream contributions
 
+**Eight merged changes across five upstream C++ projects** (PyTorch, DuckDB, bpfilter, Apache Arrow nanoarrow, OpenTelemetry C++); the four 2026 bug fixes each carry a regression test that fails without the fix, and every GPU claim below was measured on rented hardware and committed.
+
 **PyTorch core** — two accepted changes  
 Enabled existing dynamic-shape support for foreach operations by default under `torch.compile`, with a test update ([#158985](https://github.com/pytorch/pytorch/pull/158985)). Exposed `rearrange` through the `torch.func` public API, with tests and documentation ([#173183](https://github.com/pytorch/pytorch/pull/173183)).
 

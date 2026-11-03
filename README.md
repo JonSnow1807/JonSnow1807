@@ -17,10 +17,10 @@ At **Reliance Jio**, I work on production 4G/5G analytics, deterministic query c
 
 ## 01 / Upstream contributions
 
-**Eight merged changes across five upstream C++ projects** (PyTorch, DuckDB, bpfilter, Apache Arrow nanoarrow, OpenTelemetry C++); the four 2026 bug fixes each carry a regression test that fails without the fix, and every GPU claim below was measured on rented hardware and committed.
+**Nine merged changes across five upstream C++ projects** (PyTorch, DuckDB, bpfilter, Apache Arrow nanoarrow, OpenTelemetry C++); the five 2026 bug fixes each carry a regression test that fails without the fix, and every GPU claim below was measured on rented hardware and committed.
 
-**PyTorch core** — two accepted changes  
-Enabled existing dynamic-shape support for foreach operations by default under `torch.compile`, with a test update ([#158985](https://github.com/pytorch/pytorch/pull/158985)). Exposed `rearrange` through the `torch.func` public API, with tests and documentation ([#173183](https://github.com/pytorch/pytorch/pull/173183)).
+**PyTorch core** — three accepted changes  
+Enabled existing dynamic-shape support for foreach operations by default under `torch.compile`, with a test update ([#158985](https://github.com/pytorch/pytorch/pull/158985)). Exposed `rearrange` through the `torch.func` public API, with tests and documentation ([#173183](https://github.com/pytorch/pytorch/pull/173183)). Fixed the cuDNN CTC loss for strided `log_probs` and zero-initialized its gradient buffer, which cuDNN leaves unwritten past each sequence's length, with tests that compare loss and gradient against the native kernel ([#203097](https://github.com/pytorch/pytorch/pull/203097)).
 
 **DuckDB** — one merged pull request  
 `SELECT DISTINCT` over an unnested struct covered only the columns as written, not the expanded fields, so rows collapsed wrongly; the binder now regenerates the targets after binding ([#27973](https://github.com/duckdb/duckdb/pull/27973)).
@@ -31,7 +31,7 @@ Added IPv4 Type of Service and IPv6 Traffic Class matchers, including command-li
 **Apache Arrow nanoarrow and OpenTelemetry C++** — one merged pull request each  
 Made nanoarrow's testing JSON comparison recurse into nested and dictionary child fields' metadata ([#993](https://github.com/apache/arrow-nanoarrow/pull/993)). Removed a misaligned `sockaddr_in` access in OpenTelemetry C++'s `SocketAddr`, with a regression test that fails on the original header even without sanitizers ([#4725](https://github.com/open-telemetry/opentelemetry-cpp/pull/4725)).
 
-<sub>Landing commits: PyTorch <a href="https://github.com/pytorch/pytorch/commit/51eb41a57ef4365bece0c187f1d751221b88c135">foreach</a> · <a href="https://github.com/pytorch/pytorch/commit/cd59c879a7eb47de27e0eead455b0b0349c12488">rearrange</a> · DuckDB <a href="https://github.com/duckdb/duckdb/commit/9adc99d292377c206a4bc8940ce45034abd4076c">DISTINCT</a> · bpfilter <a href="https://github.com/facebook/bpfilter/commit/bcae69370eecd1cd939f9ab8d316d3ed363cf9d0">probability</a> · nanoarrow <a href="https://github.com/apache/arrow-nanoarrow/commit/08d23f647c4a81b20bf3af902c93d23401a76b24">metadata</a> · OpenTelemetry <a href="https://github.com/open-telemetry/opentelemetry-cpp/commit/23786b7889960041a5cd77ca0bfd501eff01eb99">sockaddr</a>.</sub>
+<sub>Landing commits: PyTorch <a href="https://github.com/pytorch/pytorch/commit/51eb41a57ef4365bece0c187f1d751221b88c135">foreach</a> · <a href="https://github.com/pytorch/pytorch/commit/cd59c879a7eb47de27e0eead455b0b0349c12488">rearrange</a> · <a href="https://github.com/pytorch/pytorch/commit/6baba5af876ef727695ff50ae91d8375640e5c71">CTC loss</a> · DuckDB <a href="https://github.com/duckdb/duckdb/commit/9adc99d292377c206a4bc8940ce45034abd4076c">DISTINCT</a> · bpfilter <a href="https://github.com/facebook/bpfilter/commit/bcae69370eecd1cd939f9ab8d316d3ed363cf9d0">probability</a> · nanoarrow <a href="https://github.com/apache/arrow-nanoarrow/commit/08d23f647c4a81b20bf3af902c93d23401a76b24">metadata</a> · OpenTelemetry <a href="https://github.com/open-telemetry/opentelemetry-cpp/commit/23786b7889960041a5cd77ca0bfd501eff01eb99">sockaddr</a>.</sub>
 
 ## 02 / Selected builds
 

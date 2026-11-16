@@ -9,6 +9,7 @@
   <a href="https://www.linkedin.com/in/cshrivastava/"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/linkedin-dark.svg"><img src="./assets/profile/linkedin-light.svg" width="100" alt="LinkedIn"></picture></a>
   <a href="mailto:cshrivastava2000@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/email-dark.svg"><img src="./assets/profile/email-light.svg" width="88" alt="Email Chinmay"></picture></a>
   <a href="https://huggingface.co/chinmays18"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/huggingface-dark.svg"><img src="./assets/profile/huggingface-light.svg" width="126" alt="Hugging Face"></picture></a>
+  <a href="https://github.com/JonSnow1807/JonSnow1807/blob/main/Chinmay_Shrivastava_Resume.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/profile/resume-dark.svg"><img src="./assets/profile/resume-light.svg" width="98" alt="Resume"></picture></a>
 </p>
 
 **I build high-performance backend and ML infrastructure, and I validate it against references instead of trusting it.**
@@ -144,4 +145,4 @@ Also built: **[3D Point Cloud Viewer](https://github.com/JonSnow1807/3D-Point-Cl
 I’m interested in backend, distributed-systems, ML-infrastructure and performance-engineering work.
 
 **Frisco, Texas · Open to relocation**  
-[Email](mailto:cshrivastava2000@gmail.com) · [LinkedIn](https://www.linkedin.com/in/cshrivastava/) · [Hugging Face](https://huggingface.co/chinmays18)
+[Email](mailto:cshrivastava2000@gmail.com) · [LinkedIn](https://www.linkedin.com/in/cshrivastava/) · [Hugging Face](https://huggingface.co/chinmays18) · [Resume](https://github.com/JonSnow1807/JonSnow1807/blob/main/Chinmay_Shrivastava_Resume.pdf)
